@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NouisliderModule } from 'ng2-nouislider';
 import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { RouterModule } from '@angular/router';
-
+import { AgmCoreModule } from '@agm/core';
 import { SectionsComponent } from './sections.component';
 import { ButtonsSectionComponent } from './buttons-section/buttons-section.component';
 import { InputsSectionComponent } from './inputs-section/inputs-section.component';
@@ -43,7 +43,10 @@ import { NgbdModalContent } from './modal/modal.component';
     NgbModule,
     RouterModule,
     NouisliderModule,
-    JwBootstrapSwitchNg2Module
+    JwBootstrapSwitchNg2Module,
+    AgmCoreModule.forRoot({
+      apiKey:''
+    })
   ],
   exports:[ SectionsComponent ]
 })
