@@ -4,6 +4,7 @@ import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { filter, Subscription } from 'rxjs';
 
+
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
