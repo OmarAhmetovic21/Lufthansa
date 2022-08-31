@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
     selector: 'app-navbar',
@@ -9,10 +10,13 @@ import { Location, PopStateEvent } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
     public isCollapsed = true;
+    isDesktopDevice: any;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
 
-    constructor(public location: Location, private router: Router) {
+    constructor(public location: Location, 
+                private router: Router,
+                private deviceService: DeviceDetectorService) {
     }
 
     ngOnInit() {
@@ -32,6 +36,8 @@ export class NavbarComponent implements OnInit {
      this.location.subscribe((ev:PopStateEvent) => {
          this.lastPoppedUrl = ev.url;
      });
+
+     this.isDesktopDevice = this.deviceService.isDesktop();
     }
 
     isHome() {
