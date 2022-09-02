@@ -12,6 +12,8 @@ export class NavbarComponent implements OnInit {
     public isCollapsed = true;
     isDesktopDevice: any;
     private lastPoppedUrl: string;
+    private toggleButton: any;
+    public sidebarVisible: boolean;
     private yScrollStack: number[] = [];
 
     constructor(public location: Location, 
@@ -59,4 +61,38 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+    sidebarOpen() {
+        const toggleButton = this.toggleButton;
+        const html = document.getElementsByTagName('html')[0];
+        setTimeout(()=>{
+            toggleButton.classList.add('toggled');
+        }, 500);
+
+        html.classList.add('nav-open');
+
+        this.sidebarVisible = true;
+    };
+
+    sidebarClose() {
+        const html = document.getElementsByTagName('html')[0];
+        // console.log(html);
+        this.toggleButton.classList.remove('toggled');
+
+        setTimeout(()=>{
+            this.sidebarVisible = false;
+        }, 500);
+
+        html.classList.remove('nav-open');
+    };
+
+    sidebarToggle() {
+        // const toggleButton = this.toggleButton;
+        // const body = document.getElementsByTagName('body')[0];
+        if (this.sidebarVisible === false) {
+            this.sidebarOpen();
+        } else {
+            this.sidebarClose();
+        }
+    };
 }
