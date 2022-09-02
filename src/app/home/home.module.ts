@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 import { SectionsModule } from '../sections/sections.module';
+import { TokenService } from '../token-service/token.service';
 
 @NgModule({
     imports: [
@@ -19,6 +20,6 @@ import { SectionsModule } from '../sections/sections.module';
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],
-    providers: []
+    providers: [TokenService]
 })
 export class HomeModule { }

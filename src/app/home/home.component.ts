@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../token-service/token.service';
 
 @Component({
     selector: 'app-home',
@@ -15,7 +16,21 @@ export class HomeComponent implements OnInit {
 
     focus;
     focus1;
-    constructor() { }
+    constructor(private tokenService: TokenService) { }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.getToken();
+    }
+
+
+    getToken(){
+        let data ={
+            client_id :"8fm3w586ef5svqyzfsq4ejf8",
+            client_secret: "xfbB89ucEez2Se6hxzdM",
+            grant_type: "client_credentials"
+          }
+        this.tokenService.getToken(data).subscribe((data: any)=>
+        console.log('API Called Successfully'));
+        console.log(data);
+    }
 }

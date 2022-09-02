@@ -14,6 +14,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { AllAircraftComponent } from './all-aircraft/all-aircraft.component';
+import { environment } from 'src/environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,9 @@ import { AllAircraftComponent } from './all-aircraft/all-aircraft.component';
     RouterModule,
     AppRoutingModule,
     HomeModule,
+    HttpClientModule
+
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
