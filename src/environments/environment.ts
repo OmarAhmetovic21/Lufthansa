@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.lufthansa.com/v1'
+  apiUrl: 'https://api-proxy-app.herokuapp.com/lufthansa'
 };
 
 /*

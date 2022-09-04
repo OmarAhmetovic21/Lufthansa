@@ -14,7 +14,7 @@ export class TokenService {
   public getToken(data: any): Observable<any>{
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/x-www-form-urlencoded');  
-    return this.httpClient.post(this.API_SERVER + '/oauth/token', data,{headers: headers});
+    return this.httpClient.post(this.API_SERVER + '', data,{headers: headers});
   }
   
 }

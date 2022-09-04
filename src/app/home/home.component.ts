@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from '../token-service/token.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
 
     focus;
     focus1;
-    constructor(private tokenService: TokenService) { }
+    constructor(private tokenService: TokenService,
+                private router: Router) { }
 
     ngOnInit() {
         this.getToken();
@@ -32,5 +34,9 @@ export class HomeComponent implements OnInit {
         this.tokenService.getToken(data).subscribe((data: any)=>
         console.log('API Called Successfully'));
         console.log(data);
+    }
+
+    open(page: any) {
+        this.router.navigateByUrl('/' + page);
     }
 }
