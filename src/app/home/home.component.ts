@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from '../token-service/token.service';
 import { Router } from '@angular/router';
+import { Key } from 'selenium-webdriver';
+import { Token } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-home',
@@ -18,7 +21,8 @@ export class HomeComponent implements OnInit {
     focus;
     focus1;
     constructor(private tokenService: TokenService,
-                private router: Router) { }
+                private router: Router,
+                private httpClient: HttpClient) { }
 
     ngOnInit() {
         this.getToken();
@@ -26,15 +30,18 @@ export class HomeComponent implements OnInit {
 
 
     getToken(){
-        let data ={
-            client_id :"8fm3w586ef5svqyzfsq4ejf8",
-            client_secret: "xfbB89ucEez2Se6hxzdM",
-            grant_type: "client_credentials"
-          }
-        this.tokenService.getToken(data).subscribe((data: any)=>
-        console.log('API Called Successfully'));
-        console.log(data);
+
+        this.tokenService.getToken().subscribe((data: any)=>
+        {
+            console.log('API Called Successfully')
+            console.log(data)
+            sessionStorage.setItem("lufthansa", data.access_token)
+        }
+        );
     }
+
+
+
 
     open(page: any) {
         this.router.navigateByUrl('/' + page);
