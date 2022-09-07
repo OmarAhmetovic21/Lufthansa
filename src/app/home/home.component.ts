@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Key } from 'selenium-webdriver';
 import { Token } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
+import { RefferenceDataService } from '../reference-data/refference-data.service';
 
 @Component({
     selector: 'app-home',
@@ -22,20 +23,20 @@ export class HomeComponent implements OnInit {
     focus1;
     constructor(private tokenService: TokenService,
                 private router: Router,
-                private httpClient: HttpClient) { }
+                private httpClient: HttpClient,
+                private refferenceData: RefferenceDataService) { }
 
     ngOnInit() {
         this.getToken();
     }
-
 
     getToken(){
 
         this.tokenService.getToken().subscribe((data: any)=>
         {
             console.log('API Called Successfully')
-            console.log(data)
-            sessionStorage.setItem("lufthansa", data.access_token)
+            console.log(data.token_type="Bearer")
+            sessionStorage.setItem("lufthansa",data.token_type+" "+data.access_token)
         }
         );
     }
