@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { Router } from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-buttons-section',
@@ -8,12 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./buttons-section.component.css']
 })
 export class ButtonsSectionComponent implements OnInit {
-  lat = 43.83452453468292;
-  lng = 18.302976268479117;
+  lat = 43.83454899003578;
+  lng = 18.302942704060282;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+   }
 
   ngOnInit() {
+  }
+
+  getLocation(){
+    navigator.geolocation.getCurrentPosition( pos => {
+      this.lng = +pos.coords.longitude;
+      this.lat = +pos.coords.latitude;
+      console.log("Current position: "+this.lat+" and " +this.lng);
+    });
+    
   }
 
   open(page: any) {

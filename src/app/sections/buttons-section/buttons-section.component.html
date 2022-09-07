@@ -6,7 +6,7 @@
         <h2 class="mb-5">
           <span>Google Maps</span>
         </h2>
-        <button class="btn btn-1 btn-primary" type="button">Find Me</button>
+        <button class="btn btn-1 btn-primary" (click)="getLocation()" type="button">Find Me</button>
         <!-- Buttons -->
         <agm-map [latitude]="lat" [longitude]="lng">
           <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>

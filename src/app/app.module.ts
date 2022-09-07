@@ -37,7 +37,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
