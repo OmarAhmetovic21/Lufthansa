@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { CityCodesComponent } from './city-codes/city-codes.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    AllAircraftComponent
+    AllAircraftComponent,
+    CityCodesComponent
   ],
   imports: [
     BrowserModule,
