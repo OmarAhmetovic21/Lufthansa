@@ -8,9 +8,13 @@
         </h2>
         <button class="btn btn-1 btn-primary" (click)="getLocation()" type="button">Find Me</button>
         <!-- Buttons -->
-        <agm-map [latitude]="lat" [longitude]="lng">
-          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-        </agm-map>
+        <agm-map [latitude]='lat' [longitude]='long'>
+             <agm-marker *ngFor="let data of tempData.NearestAirportResource.Airports.Airport" [latitude]="data.Position.Coordinate.Latitude" [longitude]="data.Position.Coordinate.Longitude">    
+                <agm-info-window #infoWindow>
+                      {{ data.Names.Name.$ }}
+                </agm-info-window>
+             </agm-marker>
+         </agm-map>
         <!-- Button styles -->
         
         <!-- Button colors -->

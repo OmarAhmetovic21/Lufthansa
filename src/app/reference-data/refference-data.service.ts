@@ -15,13 +15,12 @@ export class RefferenceDataService {
 
   
 
-  public getNearestAirports(latitude, longitude): Observable<any>{
+/* public getNearestAirports(latitude, longitude): Observable<any>{
     const headers = new HttpHeaders();
     return this.httpClient.get(this.API_SERVER+'/v1/mds-references/airports/nearest/'+latitude+","+longitude,
-    {headers: headers.set('Content-Type', 'application/json'), params: {lang: "BA"}}
+    {headers: headers.set('Content-Type', 'application/json').set('Accept', 'application/json')}
     
     );
-  }
-  
+  }*/
 }
 
