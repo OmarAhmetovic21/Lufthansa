@@ -20,11 +20,30 @@
              
           </div>
         </div>
+       
       </div>
     </section>
     
-    <div class="row mt-4">
-        <h4 style="text-align: center;" [ngClass]="isDesktopDevice ? 'col-4': 'col-12 mx-auto'"><b>Test</b></h4>
+    <div class="row justify-content-center mt-4">
+      <div class="col-12">
+        <table class="table table-bordered scroll table-sm">
+          <tr class="w-auto" style="color: #191d4d; background-color: #f4811f;">
+            <th>City Code</th>
+            <th>City</th>
+            <th>Country</th>
+          </tr>
+
+          <tr class="w-auto" *ngFor="let data of cityCodes">
+           <td>{{data.code}}</td>
+           <td>{{data.city}}</td>
+           <td>{{data.country}}</td>
+          </tr>
+
+
+
+       </table>
+      </div>
+        
     </div>
     
   </main>

@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { CityCodesComponent } from './city-codes/city-codes.component';
+import { AllLoungesComponent } from './all-lounges/all-lounges.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CityCodesComponent } from './city-codes/city-codes.component';
     FooterComponent,
     LoginComponent,
     AllAircraftComponent,
-    CityCodesComponent
+    CityCodesComponent,
+    AllLoungesComponent
   ],
   imports: [
     BrowserModule,

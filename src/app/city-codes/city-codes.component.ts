@@ -20,4 +20,85 @@ export class CityCodesComponent implements OnInit {
     this.router.navigateByUrl('/' + page);
 }
 
+cityCodes = [
+  {
+    code: "SJJ",
+    city: "Sarajevo",
+    country: "Bosnia and Herzegovina"
+  },
+
+  {
+    code: "TZL",
+    city: "Tuzla",
+    country: "Bosnia and Herzegovina"
+  },
+
+  {
+    code: "BNX",
+    city: "Banja Luka",
+    country: "Bosnia and Herzegovina"
+  },
+
+  {
+    code: "OMO",
+    city: "Mostar",
+    country: "Bosnia and Herzegovina"
+  },
+
+  {
+    code: "ZAG",
+    city: "Zagreb",
+    country: "Croatia"
+  },
+
+  {
+    code: "OSI",
+    city: "Osijek",
+    country: "Croatia"
+  },
+
+  {
+    code: "RJK",
+    city: "Rijeka",
+    country: "Croatia"
+  },
+
+  {
+    code: "PUY",
+    city: "Pula",
+    country: "Croatia"
+  },
+
+  {
+    code: "ZAD",
+    city: "Zadar",
+    country: "Croatia"
+  },
+
+  {
+    code: "SPU",
+    city: "Split",
+    country: "Croatia"
+  },
+
+  {
+    code: "DBV",
+    city: "Dubrovnik",
+    country: "Croatia"
+  },
+
+  {
+    code: "TGD",
+    city: "Podgorica",
+    country: "Montenegro"
+  },
+
+  {
+    code: "TIV",
+    city: "Tivat",
+    country: "Montenegro"
+  }
+  
+]
+
 }
