@@ -20,40 +20,38 @@
           <div class="row align-items-center justify-content-center mt-5">
             <div class="text-center">
               <button class="btn btn-1 btn-primary navButton" type="button" (click)="open('home')">Back to Home</button>
+              <button class="btn btn-1 btn-primary navButton" type="button" (click)="open('all-aircraft')">View Lufthansa Fleet</button>
               <button class="btn btn-1 btn-primary navButton" type="button" (click)="open('city-codes')">View City Codes</button>
             </div>
           </div>
-        </div>
-          
-        
-
-        <div class="row justify-content-center mt-5">
-          <div class="text-center">
-            <h4 style="color:#f4811f;">Write the name of city</h4> 
-            <input type="text" placeholder="City name">
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-5">
-          <div class="text-center">
-             <button class="btn btn-1 btn-primary mt-4 navButton" type="button">Get Lounges</button>
-          </div>
-        </div>
-       
+        </div> 
       </div>
     </section>
 
-    <div class="row">
-      <table class="table table-bordered scroll table-sm ml-4 mr-4">
+    <div class="row justify-content-center">
+      <div class="col-12">
+         <table class="table table-bordered scroll table-sm">
 
-        <tr>
-          <th>Data</th>
-          <th>Test</th>
-        </tr>
+            <tr class="w-auto" style="color: #191d4d; background-color: #f4811f;">
+              <th>Airport Code</th>
+              <th>Name of Lounge</th>
+              <th>Location</th>
+              <th>Opening Hours</th>
+            </tr>
 
+            <tr class="w-auto" *ngFor="let item of (loungesObservable | async)">
+              <td>{{item?.AirportCode}}</td>
+              <td>{{item.Names?.Name?.$}}</td>
+              <td>{{item.Locations?.Location?.$}}</td>
+              <td>
+                {{
+                  (item?.OpeningHours?.OpeningHours[1]?.$ ? item?.OpeningHours?.OpeningHours[1]?.$ : '5:00 am - 10:00 pm')
+                }}
+            </td>
+            </tr>
 
-      </table>
-
+          </table>
+       </div>
     </div>
 
 
