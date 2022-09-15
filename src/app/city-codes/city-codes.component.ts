@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Router } from '@angular/router';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-city-codes',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class CityCodesComponent implements OnInit {
   isDesktopDevice: any;
   constructor(private deviceService: DeviceDetectorService,
-              private router: Router) { }
+              private router: Router,
+              public activeModal: NgbActiveModal,) { }
 
   ngOnInit(): void {
     this.isDesktopDevice = this.deviceService.isDesktop();
@@ -19,6 +21,11 @@ export class CityCodesComponent implements OnInit {
   open(page: any) {
     this.router.navigateByUrl('/' + page);
 }
+
+closeModal() {
+  this.activeModal.close();
+}
+
 
 cityCodes = [
   {

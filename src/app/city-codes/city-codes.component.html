@@ -1,34 +1,11 @@
-<main>
-    <section class="section section-shaped section-lg">
-      <div class="shape shape-style-1 bg-gradient-default">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="container pt-lg-md">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-              <h1 style="color: #f4811f; text-align: center;">City Codes</h1>
-          </div> 
-        </div>     
-        <div class="col px-0">
-          <div class="row align-items-center justify-content-center mt-5">
-            <div class="text-center">
-              <button class="btn btn-1 btn-primary navButton" type="button" (click)="open('home')">Back to Home</button>
-              <button class="btn btn-1 btn-primary navButton" type="button" (click)="open('all-aircraft')">View Lufthansa Fleet</button>
-              <button class="btn btn-1 btn-primary navButton" type="button" (click)="open('all-lounges')">View Loungues</button>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-    </section>
-    
+
+<div class="modal-header">
+  <h1 class="modal-title" style="color: #191d4d;; text-align: center;">City Codes</h1>
+  <button style="background-color: #191d4d;" type="button" class="close" data-dismiss="modal" (click)="activeModal.close()">
+    <span style="color: #f4811f;" aria-hidden="true">&times;</span>
+  </button>
+ </div>
+  <div class="modal-body">
     <div class="row justify-content-center mt-4">
       <div class="col-12">
         <table class="table table-bordered scroll table-sm">
@@ -50,5 +27,5 @@
       </div>
         
     </div>
-    
-  </main>
+  </div>
+
