@@ -39,16 +39,25 @@
               <th>Opening Hours</th>
             </tr>
 
-            <tr class="w-auto" *ngFor="let item of (loungesObservable | async)">
-              <td>{{item?.AirportCode}}</td>
-              <td>{{item.Names?.Name?.$}}</td>
-              <td>{{item.Locations?.Location?.$}}</td>
-              <td>
-                {{
-                  (item?.OpeningHours?.OpeningHours[1]?.$ ? item?.OpeningHours?.OpeningHours[1]?.$ : '5:00 am - 10:00 pm')
-                }}
-            </td>
-            </tr>
+            <ng-container *ngFor="let item of (loungesObservable | async)">
+
+              <tr (click)="clickTableRow(item)" class="w-auto">
+                <td>{{item?.AirportCode}}</td>
+                <td>{{item.Names?.Name?.$}}</td>
+                <td>{{item.Locations?.Location?.$}}</td>
+                <td>{{item.OpenningHours?.Hours}}</td>
+              </tr>
+  
+              <div *ngIf="item.visible" >
+              <div style="text-align: center;">
+                <h5>Features:</h5>
+                <label *ngIf="item.Features.Restrooms == true">WC</label>
+                <i *ngIf="item.Features.WLANFacility == true" class="fa fa-solid fa-wifi ml-2"></i> 
+                <i *ngIf="item.Features.TV == true" class="fa fa-solid fa-tv ml-2"></i>
+              </div>
+              </div>
+
+            </ng-container>
 
           </table>
        </div>

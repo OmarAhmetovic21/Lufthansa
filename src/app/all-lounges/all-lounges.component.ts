@@ -32,7 +32,29 @@ export class AllLoungesComponent implements OnInit {
         Location: {
           $: "Terminal 1, Departure area C (NonSchengen), near gates C14/C15"
         }
-      }
+      },
+
+      OpenningHours: {
+          Hours: "5:00 am - 10:00 pm"
+      },
+
+      Features: {
+        NonSmokingLounge: false,
+        Restrooms: false,
+        ShowerFacilities: true,
+        RelaxingRooms: false,
+        MeetingRooms: false,
+        OfficeUnits: true,
+        CopyMachine: true,
+        FaxMachine: false,
+        MAMPrinter: false,
+        CreditCardTelephone: false,
+        FreeLocalTelephoneCalls: false,
+        PCWithInternetAccess: false,
+        DataPortForLaptops: false,
+        WLANFacility: true,
+        TV: true
+    }
     },
   
     {
@@ -44,10 +66,70 @@ export class AllLoungesComponent implements OnInit {
       },
       Locations: {
         Location: {
-          $: "Terminal 1, Departure area C (NonSchengen), near gates C14/C15"
+          $: "Terminal 1, Concourse C (NonSchengen), Departure level, above gates C14/C15"
         }
-      }
+      },
+
+      OpenningHours: {
+        Hours: "5:00 am - 10:00 pm"
+      },
+
+      Features: {
+        NonSmokingLounge: false,
+        Restrooms: false,
+        ShowerFacilities: true,
+        RelaxingRooms: false,
+        MeetingRooms: false,
+        OfficeUnits: true,
+        CopyMachine: true,
+        FaxMachine: false,
+        MAMPrinter: false,
+        CreditCardTelephone: false,
+        FreeLocalTelephoneCalls: false,
+        PCWithInternetAccess: false,
+        DataPortForLaptops: false,
+        WLANFacility: true,
+        TV: true
+    }
     },
+
+    {
+      AirportCode: "FRA",
+      Names: {
+        Name: {
+          $: "Lufthansa Business Class Lounge"
+        }
+      },
+      Locations: {
+        Location: {
+          $: "Terminal 1, Departure area B (NonSchengen), near gates B24 and B28"
+        }
+      },
+
+      OpenningHours: {
+        Hours: "5:00 am - 10:00 pm"
+      },
+      
+      Features: {
+        NonSmokingLounge: false,
+        Restrooms: false,
+        ShowerFacilities: true,
+        RelaxingRooms: false,
+        MeetingRooms: false,
+        OfficeUnits: true,
+        CopyMachine: true,
+        FaxMachine: false,
+        MAMPrinter: false,
+        CreditCardTelephone: false,
+        FreeLocalTelephoneCalls: false,
+        PCWithInternetAccess: false,
+        DataPortForLaptops: false,
+        WLANFacility: true,
+        TV: true
+    }
+    },
+
+
   ]
 
   constructor(private deviceService: DeviceDetectorService,
@@ -64,6 +146,15 @@ export class AllLoungesComponent implements OnInit {
 
   open(page: any) {
     this.router.navigateByUrl('/' + page);
+}
+
+clickTableRow(data){
+  if(data.visible){
+    data.visible = !data.visible;
+  }
+  else{
+    data.visible = true;
+  }
 }
 
 getLounges() {
