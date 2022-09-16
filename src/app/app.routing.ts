@@ -4,18 +4,12 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AllLoungesComponent } from './all-lounges/all-lounges.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SignupComponent } from './signup/signup.component';
 import { AllAircraftComponent } from './all-aircraft/all-aircraft.component';
-import { CityCodesComponent } from './city-codes/city-codes.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'register',           component: SignupComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'all-aircraft', component: AllAircraftComponent},
-    { path: 'city-codes', component: CityCodesComponent},
     { path: 'all-lounges', component: AllLoungesComponent}
 ];
 
