@@ -14,6 +14,23 @@ import { RefferenceDataService } from 'src/app/reference-data/refference-data.se
 export class ButtonsSectionComponent implements OnInit {
   lat = 45.824954;
   long = 16.116235;
+  view = [];
+
+  saleData = [
+    { name: "2017", value: 129300000},
+    { name: "2018", value: 141900000 },
+    { name: "2019", value: 145300000 },
+    { name: "2020", value: 36400000 },
+    { name: "2021", value: 46900000 }
+  ];
+
+  flightData = [
+    { name: "2017", value: 1128745},
+    { name: "2018", value: 1163565},
+    { name: "2019", value: 1187728 },
+    { name: "2020", value: 390900 },
+    { name: "2021", value: 460029 }
+  ];
 
   tempData = {
     NearestAirportResource: {
@@ -130,12 +147,18 @@ export class ButtonsSectionComponent implements OnInit {
   
   constructor(private router: Router,
               private httpClient: HttpClient,
-              private refferenceData: RefferenceDataService) {
+              private refferenceData: RefferenceDataService) 
+   {
+    this.view = [innerWidth / 1.4, 400];
    }
 
   ngOnInit() {
     
   }
+
+  onResize(event) {
+    this.view = [event.target.innerWidth / 1.35, 400];
+}
 
   getLocation(){
     /*this.refferenceData.getNearestAirports(this.lat, this.long ).subscribe((data:any)=>{
@@ -144,8 +167,6 @@ export class ButtonsSectionComponent implements OnInit {
     console.log("Current position: "+this.lat+" and " +this.long);
    
   }
-
-
 
   open(page: any) {
     this.router.navigateByUrl('/' + page);

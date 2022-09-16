@@ -18,28 +18,41 @@
         <!-- Button styles -->
         
         <!-- Button colors -->
-        <div class="mb-3 mt-5">
-        </div>
-        
-        
-        <div class="mb-3 mt-5">
-          <small class="text-uppercase font-weight-bold">Outline</small>
-        </div>
-        <button class="btn btn-1 btn-outline-primary" type="button">Outline-primary</button>
-        <button class="btn btn-1 btn-outline-info" type="button">Outline-info</button>
-        <button class="btn btn-1 btn-outline-success" type="button">Outline-success</button>
-        <button class="btn btn-1 btn-outline-warning" type="button">Outline-warning</button>
-        <button class="btn btn-1 btn-outline-danger" type="button">Outline-danger</button>
         <!-- Button links -->
-        <div class="mb-3 mt-5">
-          <small class="text-uppercase font-weight-bold">Links</small>
-        </div>
-        <a href="javascript:void(0)" class="btn btn-link text-default">Default</a>
-        <a href="javascript:void(0)" class="btn btn-link text-primary">Primary</a>
-        <a href="javascript:void(0)" class="btn btn-link text-info">Info</a>
-        <a href="javascript:void(0)" class="btn btn-link text-success">Success</a>
-        <a href="javascript:void(0)" class="btn btn-link text-warning">Warning</a>
-        <a href="javascript:void(0)" class="btn btn-link text-danger">Danger</a>
+        <br> <br> <br>
+        <h2>Lufthansa statistics</h2>
+        <ngx-charts-bar-vertical
+    [view]="view"
+    (window:resize)="onResize($event)"
+    [results]="saleData"
+    [xAxisLabel]="'Year'"
+    [legendTitle]="'Passengers per year'"
+    [yAxisLabel]="'Passengers'"
+    [legend]="false"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true">
+</ngx-charts-bar-vertical>
+
+<br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br>
+<ngx-charts-bar-horizontal
+[view]="view"
+(window:resize)="onResize($event)"
+    [results]="flightData"
+    [xAxisLabel]="'Flights'"
+    [legendTitle]="'Flights per year'"
+    [yAxisLabel]="'Year'"
+    [legend]="false"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true">
+</ngx-charts-bar-horizontal>
+        
       </div>
     </div>
   </div>

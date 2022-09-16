@@ -20,6 +20,9 @@ import { VersionsSectionComponent } from './versions-section/versions-section.co
 import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     SectionsComponent,
@@ -46,7 +49,10 @@ import { NgbdModalContent } from './modal/modal.component';
     JwBootstrapSwitchNg2Module,
     AgmCoreModule.forRoot({
       apiKey:''
-    })
+    }),
+    
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   exports:[ SectionsComponent ]
 })
